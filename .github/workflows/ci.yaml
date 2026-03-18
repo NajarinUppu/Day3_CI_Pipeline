@@ -1,0 +1,25 @@
+name:  CI Pipeline
+on:
+  push:
+    branches: 
+      - main
+      - feature
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Run Simple Script
+        run: echo "Hello DevOps - CI pipeline running!"
+      - name: Verify files
+        run: ls -l
+      
+        
+    
+    
+  
